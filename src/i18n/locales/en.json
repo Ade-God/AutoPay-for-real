@@ -1,0 +1,14 @@
+{
+  "welcome": "Welcome to AutoPay",
+  "home": {
+    "greeting": "Hello, {{name}}",
+    "masked_balance": "Tap to reveal"
+  },
+  "actions": {
+    "pay_now": "Pay Now",
+    "add_bill": "Add Bill",
+    "create_budget": "Create Budget",
+    "invite_family": "Invite Family",
+    "new": "+ New"
+  }
+}
