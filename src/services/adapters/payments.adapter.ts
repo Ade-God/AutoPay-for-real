@@ -1,0 +1,46 @@
+import { Payment, Transaction } from '@/store/types';
+
+export interface PaymentResponse {
+  id: string;
+  provider_id: string;
+  amount: number;
+  status: string;
+  created_at: string;
+  method_id: string;
+}
+
+export const mapPaymentResponse = (payload: PaymentResponse): Payment => ({
+  id: payload.id,
+  providerId: payload.provider_id,
+  amount: payload.amount,
+  status: payload.status as Payment['status'],
+  createdAt: payload.created_at,
+  methodId: payload.method_id
+});
+
+export interface TransactionResponse {
+  id: string;
+  description: string;
+  reference: string;
+  amount: number;
+  status: string;
+  provider_id?: string;
+  bill_id?: string;
+  created_at: string;
+  method_id: string;
+  fees: number;
+}
+
+export const mapTransactionResponse = (payload: TransactionResponse): Transaction => ({
+  id: payload.id,
+  description: payload.description,
+  reference: payload.reference,
+  amount: payload.amount,
+  status: payload.status as Transaction['status'],
+  providerId: payload.provider_id,
+  billId: payload.bill_id,
+  createdAt: payload.created_at,
+  methodId: payload.method_id,
+  currency: 'NGN',
+  fees: payload.fees
+});
